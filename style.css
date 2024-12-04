@@ -1,0 +1,191 @@
+/* General Styles */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: #f5f5f5;
+}
+
+/* Header */
+h1 {
+    font-size: 2.5rem;
+    color: #fff;
+    background-color: #4caf50;
+    padding: 1rem;
+    width: 100%;
+    text-align: center;
+    margin: 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Style for the input container */
+.input-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0.5rem;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 950px;
+    margin: 1.5rem auto;
+}
+
+/* Style for the input field */
+input {
+    flex: 1;
+    padding: 0.75rem;
+    font-size: 1rem;
+    border: none;
+    outline: none;
+    background-color: transparent;
+}
+
+/* Style for the button */
+button {
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    background: linear-gradient(to right, #4caf50, #45a049);
+    color: white;
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 0.25rem;
+}
+
+button:hover {
+    transform: scale(1.1);
+    background: linear-gradient(to right, #45a049, #4caf50);
+}
+
+/* To-Do List */
+#list {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0;
+    width: 100%;
+    max-width: 90vw;
+}
+
+#list li {
+    background-color: white;
+    margin: 0.5rem 0;
+    padding: 0.75rem;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    box-sizing: border-box;
+    position: relative;
+    animation: slideIn 0.3s ease-in-out;
+}
+
+/* Button container */
+.button-container {
+    display: flex;
+    gap: 1rem; /* Space between buttons */
+    margin-left: auto; /* Align buttons to the right */
+}
+
+/* Completed Task */
+.Completed {
+    text-decoration: line-through;
+    color: #999;
+    opacity: 0.7;
+}
+
+/* Completed Indicator outside the task text */
+.Completed .indicator {
+    position: absolute;
+    left: -1.5rem;
+    font-size: 1.2rem;
+    color: #4caf50;
+    font-weight: bold;
+}
+
+/* Removing Task Animation */
+.removing {
+    animation: slideOut 0.3s ease-in-out forwards;
+}
+
+/* Style for the Remove button */
+button.remove {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    border: none;
+    border-radius: 5px;
+    background: linear-gradient(to right, #ff4b5c, #ff2e44);
+    color: white;
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+button.remove:hover {
+    transform: scale(1.05);
+    background: linear-gradient(to right, #ff2e44, #ff4b5c);
+}
+
+/* Style for the Complete button */
+button.complete {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    border: none;
+    border-radius: 5px;
+    background: linear-gradient(to right, #4caf50, #45a049);
+    color: white;
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+button.complete:hover {
+    transform: scale(1.05);
+    background: linear-gradient(to right, #45a049, #4caf50);
+}
+
+/* Reminder message styles */
+.reminder-message {
+    display: none; /* Hide the message initially */
+    color: #ff4b5c; /* Red color to draw attention */
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    text-align: center;
+    background-color: #ffe5e5; /* Light red background */
+    padding: 0.5rem;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Animations */
+@keyframes slideIn {
+    from {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideOut {
+    from {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+}
